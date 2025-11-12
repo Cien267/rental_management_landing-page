@@ -1,51 +1,65 @@
 ---
 const problems = [
-    {
-      icon: "🗒️",
-      title: "Thất lạc sổ tay ghi chép",
-      description: "Ghi chép tay dễ thất lạc hoặc hư hỏng, mất hàng giờ tìm kiếm thông tin người thuê hay lịch sử thanh toán.",
-    },
-    {
-      icon: "📱",
-      title: "Tin nhắn Zalo rối rắm",
-      description: "Thông tin người thuê, xác nhận thanh toán hay hợp đồng bị chôn vùi giữa hàng trăm tin nhắn.",
-    },
-    {
-      icon: "📊",
-      title: "Bảng Excel lộn xộn",
-      description: "Bảng Excel thủ công dễ lỗi, nhiều phiên bản chồng chéo và sai sót xảy ra liên tục.",
-    },
-    {
-      icon: "⏰",
-      title: "Trễ hạn thanh toán",
-      description: "Tính ngày đến hạn cho từng hợp đồng tốn nhiều thời gian, bỏ sót theo dõi dẫn đến thanh toán trễ và thất thu.",
-    },
-  ];
+  {
+    icon: "🗒️",
+    title: "Thất lạc sổ tay ghi chép",
+    description:
+      "Ghi chép tay dễ thất lạc hoặc hư hỏng, mất hàng giờ tìm kiếm thông tin người thuê hay lịch sử thanh toán.",
+  },
+  {
+    icon: "📱",
+    title: "Tin nhắn Zalo rối rắm",
+    description:
+      "Thông tin người thuê, xác nhận thanh toán hay hợp đồng bị chôn vùi giữa hàng trăm tin nhắn.",
+  },
+  {
+    icon: "📊",
+    title: "Bảng Excel lộn xộn",
+    description:
+      "Bảng Excel thủ công dễ lỗi, nhiều phiên bản chồng chéo và sai sót xảy ra liên tục.",
+  },
+  {
+    icon: "⏰",
+    title: "Trễ hạn thanh toán",
+    description:
+      "Tính ngày đến hạn cho từng hợp đồng tốn nhiều thời gian, bỏ sót theo dõi dẫn đến thanh toán trễ và thất thu.",
+  },
+]
 ---
+
 <section class="py-20 pb-40 bg-muted/30">
   <div class="container mx-auto px-4">
     <div class="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
+      <h2
+        class="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight"
+      >
         Bạn vẫn quản lý nhà trọ thủ công?
       </h2>
-      <p class="text-xl text-muted-foreground">
-        Hầu hết chủ nhà Việt Nam vẫn quản lý thủ công — tốn thời gian, thất thoát tiền bạc và đôi khi nảy sinh sai sót không đáng có.
+      <p class="text-xl text-gray-600">
+        Hầu hết chủ nhà Việt Nam vẫn quản lý thủ công — tốn thời gian, thất
+        thoát tiền bạc và đôi khi nảy sinh sai sót không đáng có.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-      {problems.map((problem, index) => (
-        <div
-          class="bg-card p-6 rounded-xl  border border-gray-200 shadow-md hover:shadow-lg hover:-translate-y-2 hover:cursor-crosshair transition-all duration-300 animate-slide-up"
-          style={`animation-delay: ${index * 0.1}s`}
-        >
-          <div class="text-destructive mb-4">
-            <span class="text-3xl">{problem.icon}</span>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+    >
+      {
+        problems.map((problem, index) => (
+          <div
+            class="bg-card p-6 rounded-xl  border border-gray-200 shadow-md hover:shadow-lg hover:-translate-y-2 hover:cursor-crosshair transition-all duration-300 animate-slide-up"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="text-destructive mb-4">
+              <span class="text-3xl">{problem.icon}</span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-card-foreground">
+              {problem.title}
+            </h3>
+            <p class="text-sm text-muted-foreground">{problem.description}</p>
           </div>
-          <h3 class="text-lg font-semibold mb-2 text-card-foreground">{problem.title}</h3>
-          <p class="text-sm text-muted-foreground">{problem.description}</p>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

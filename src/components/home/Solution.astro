@@ -1,0 +1,72 @@
+---
+const benefits = [
+  "Quản lý thông tin người thuê an toàn, tập trung.",
+  "Không bao giờ quên thanh toán hay ngày gia hạn hợp đồng.",
+  "Tạo hóa đơn chuyên nghiệp chỉ trong vài giây.",
+  "Xem ngay ai đã trả và ai còn nợ.",
+  "Quản lý nhiều nhà trọ mọi lúc, mọi nơi.",
+  "Xuất dữ liệu bất cứ khi nào bạn cần.",
+]
+---
+
+<section class="py-20 pb-40 bg-linear-to-b from-background to-accent-light/20">
+  <div class="container mx-auto px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-slide-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+          <span
+            class="bg-linear-to-r from-teal-300 to-cyan-600 inline-block text-transparent bg-clip-text"
+            >Sổ Trọ</span
+          > - Hệ thống quản lý cho thuê chuyên nghiệp <img
+            class="inline"
+            src="/src/assets/confetti.webp"
+          />
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ngừng lãng phí thời gian với sổ ghi chép và Excel. Sổ Trọ mang đến cho
+          bạn một hệ thống CRM hiện đại, được thiết kế dành cho mọi quy mô chủ
+          nhà cho thuê.
+        </p>
+      </div>
+
+      <div class="max-w-6xl mx-auto bg-card p-8 md:p-12 rounded-2xl shadow-xl">
+        <div class="grid md:grid-cols-2 gap-6">
+          {
+            benefits.map((benefit, index) => (
+              <div
+                class="flex items-start gap-3 animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <span class="text-2xl font-bold text-sky-600">🗹</span>
+                <p class="text-lg text-card-foreground">{benefit}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-gray-200">
+          <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div class="text-4xl font-bold text-sky-600 mb-2">100%</div>
+              <div class="text-sm text-muted-foreground font-semibold">
+                Lưu trữ đám mây
+              </div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-sky-600 mb-2">24/7</div>
+              <div class="text-sm text-muted-foreground font-semibold">
+                Truy cập bất kì đâu
+              </div>
+            </div>
+            <div>
+              <div class="text-4xl font-bold text-sky-600 mb-2">An toàn</div>
+              <div class="text-sm text-muted-foreground font-semibold">
+                Dữ liệu bảo mật
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
