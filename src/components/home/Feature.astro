@@ -1,0 +1,89 @@
+---
+const features = [
+  {
+    icon: "👥",
+    title: "Quản lý người thuê",
+    description:
+      "Lưu trữ đầy đủ hồ sơ người thuê, thông tin liên hệ, giấy tờ tùy thân và lịch sử thuê nhà trong một hệ thống được sắp xếp khoa học.",
+  },
+  {
+    icon: "📄",
+    title: "Hợp đồng thông minh",
+    description:
+      "Tạo, theo dõi và quản lý hợp đồng cho thuê với các nhắc nhở tự động về ngày gia hạn và ngày hết hạn.",
+  },
+  {
+    icon: "📋",
+    title: "Tạo hóa đơn chuyên nghiệp",
+    description: "Tạo hóa đơn chuyên nghiệp dựa trên điều khoản hợp đồng.",
+  },
+  {
+    icon: "✅",
+    title: "Theo dõi thanh toán",
+    description:
+      "Xem trạng thái thanh toán ngay lập tức. Biết chính xác ai đã trả, ai đang chờ và ai đang quá hạn.",
+  },
+  {
+    icon: "🏘️",
+    title: "Hỗ trợ đa nhà trọ",
+    description:
+      "Quản lý không giới hạn phòng, căn hộ, tòa nhà hoặc nhà trọ chỉ từ một phần mềm duy nhất.",
+  },
+  {
+    icon: "⚠️",
+    title: "Cảnh báo thanh toán và hợp đồng trễ hạn",
+    description:
+      "Không bao giờ bỏ lỡ hạn thanh toán. Hệ thống tự động hiển thị cảnh báo khi có thanh toán trễ hạn hoặc hợp đồng sắp hết hạn.",
+  },
+  {
+    icon: "📥",
+    title: "Xuất dữ liệu",
+    description:
+      "Xuất dữ liệu của bạn bất cứ lúc nào để phục vụ kế toán, khai thuế hoặc sao lưu.",
+  },
+  {
+    icon: "🛡️",
+    title: "An toàn và bảo mật",
+    description: "Thông tin được đảm bảo bảo mật nghiêm ngặt.",
+  },
+]
+---
+
+<section id="features" class="py-20 pb-40 bg-background">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
+      <h2
+        class="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight"
+      >
+        Tất cả những gì bạn cần để vận hành một cách chuyên nghiệp
+      </h2>
+      <p class="text-xl text-gray-600">
+        Sổ Trọ cung cấp đầy đủ công cụ để bạn quản lý nhà trọ như một doanh
+        nghiệp chuyên nghiệp.
+      </p>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto"
+    >
+      {
+        features.map((feature, index) => (
+          <div
+            class="bg-card p-6 rounded-xl  border border-gray-200 shadow-md hover:shadow-[0_12px_24px_rgba(0,111,200,0.3)] hover:-translate-y-2 hover:cursor-pointer transition-all duration-300 animate-slide-up"
+            style={{ animationDelay: `${index * 0.05}s` }}
+          >
+            <div class="text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              {feature.icon}
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-card-foreground">
+              {feature.title}
+            </h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
