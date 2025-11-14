@@ -1,0 +1,119 @@
+---
+const plans = [
+  {
+    name: "Khởi Đầu",
+    price: "Miễn phí",
+    period: "Vĩnh viễn",
+    description: "Hoàn hảo cho chủ nhà có 1 nhà trọ",
+    features: [
+      "Tối đa 1 nhà trọ",
+      "Số lượng thuê không giới hạn",
+      "Quản lý hợp đồng",
+      "Hóa đơn cơ bản",
+      "Theo dõi thanh toán",
+    ],
+    cta: "Bắt đầu miễn phí",
+    popular: false,
+  },
+  {
+    name: "Chuyên Nghiệp",
+    price: "50.000đ",
+    period: "mỗi tháng",
+    description: "Dành cho chủ nhà quản lý nhiều nhà trọ",
+    features: [
+      "Tối đa 3 nhà trọ",
+      "Số lượng phòng không giới hạn",
+      "Số lượng thuê không giới hạn",
+      "Tính năng hợp đồng nâng cao",
+      "Theo dõi thanh toán & công nợ",
+      "Xuất dữ liệu",
+      "Hỗ trợ ưu tiên",
+    ],
+    cta: "Dùng thử 14 ngày",
+    popular: true,
+  },
+  {
+    name: "Doanh Nghiệp",
+    price: "Tùy chỉnh",
+    period: "Liên hệ",
+    description: "Dành cho các công ty quản lý nhà trọ",
+    features: [
+      "Bao gồm tất cả tính năng của gói Chuyên Nghiệp",
+      "Không giới hạn nhà trọ",
+      "Tích hợp tùy chỉnh",
+      "Quản lý tài khoản riêng",
+      "Đào tạo tùy chỉnh",
+      "Truy cập API",
+      "Tùy chọn thương hiệu riêng",
+    ],
+    cta: "Liên hệ ngay",
+    popular: false,
+  },
+]
+---
+
+<section class="py-20 pb-40 bg-muted/30">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+        Giá Phù Hợp Cho Mọi Chủ Nhà
+      </h2>
+      <p class="text-xl text-gray-600">
+        Dùng thử miễn phí, nâng cấp khi cần. Hoàn toàn minh bạch, hủy dễ dàng
+        bất cứ lúc nào.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {
+        plans.map((plan, index) => (
+          <div
+            class={`relative p-8 rounded-2xl border-2 bg-card transition-all duration-300 shadow-xl hover:shadow-[0_12px_24px_rgba(0,111,200,0.3)] animate-slide-up border-gray-300 hover:border-sky-500 hover:cursor-pointer hover:scale-105`}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            {plan.popular && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-sky-500 text-white text-sm font-semibold rounded-full">
+                Phổ biến nhất
+              </div>
+            )}
+
+            <div class="text-center mb-6">
+              <h3 class="text-2xl font-bold mb-2 text-card-foreground">
+                {plan.name}
+              </h3>
+              <p class="text-sm text-gray-600 mb-4">{plan.description}</p>
+              <div class="mt-8 mb-2">
+                <span class="text-5xl font-bold text-sky-700">
+                  {plan.price}
+                </span>
+              </div>
+              <div class="text-sm text-gray-600">{plan.period}</div>
+            </div>
+
+            <ul class="space-y-3 mb-18">
+              {plan.features.map((feature, featureIndex) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-blue-500 font-bold">🗸</span>
+                  <span class="text-sm text-gray-800">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <button
+              class="w-9/10 absolute bottom-6 left-1/2 -translate-x-1/2 cursor-pointer transition-all bg-sky-500 text-white px-6 py-2 rounded-lg
+                border-sky-600 text-center
+                border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+                active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
+            >
+              {plan.cta}
+            </button>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-12 max-w-2xl mx-auto">
+      Tất cả các gói đều bao gồm lưu trữ đám mây an toàn, sao lưu tự động và cập
+      nhật định kỳ.
+    </p>
+  </div>
+</section>
