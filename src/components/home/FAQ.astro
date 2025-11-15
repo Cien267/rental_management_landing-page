@@ -1,0 +1,62 @@
+---
+const faqs = [
+  {
+    question: "Nếu tôi đang dùng Excel hoặc Zalo để quản lý phòng trọ thì sao?",
+    answer:
+      "Đó chính là lý do Sổ Trọ ra đời! Bạn có thể dễ dàng chuyển từ Excel hoặc cách làm thủ công sang hệ thống của chúng tôi. Chúng tôi hỗ trợ nhập dữ liệu người thuê và hướng dẫn thiết lập. Hầu hết người dùng tiết kiệm hơn 10 giờ mỗi tuần.",
+  },
+  {
+    question: "Sổ Trọ có bảo mật không? Dữ liệu của tôi được lưu ở đâu?",
+    answer:
+      "Có. Sổ Trọ dùng chuẩn bảo mật cấp doanh nghiệp với uptime 99,9%. Dữ liệu được mã hóa, sao lưu hằng ngày và lưu trữ trên máy chủ an toàn. Bạn luôn kiểm soát và có thể xuất dữ liệu bất cứ lúc nào.",
+  },
+  {
+    question:
+      "Tôi có thể quản lý nhiều nhà/phòng trọ trong một tài khoản không?",
+    answer:
+      "Hoàn toàn được. Gói Chuyên Nghiệp giúp bạn quản lý tối đa 3 nhà trọ, và gói Doanh Nghiệp thì không giới hạn. Bạn có thể chuyển đổi giữa các cơ sở và xem báo cáo tổng hợp dễ dàng.",
+  },
+  {
+    question: "Có hỗ trợ hoặc đào tạo không?",
+    answer:
+      "Có! Tất cả các gói đều có hỗ trợ qua email. Gói Chuyên Nghiệp và Doanh Nghiệp được ưu tiên hỗ trợ. Chúng tôi còn có video hướng dẫn, tài liệu và có thể đào tạo cho các đơn vị lớn.",
+  },
+  {
+    question: "Tôi có thể hủy gói bất cứ lúc nào không?",
+    answer:
+      "Có, không ràng buộc hợp đồng dài hạn. Bạn có thể hủy bất cứ lúc nào. Dữ liệu của bạn vẫn có thể xuất ra trong 30 ngày sau khi hủy.",
+  },
+]
+---
+
+<section id="faq" class="py-20 pb-40">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2
+        class="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance"
+      >
+        Câu hỏi thường gặp
+      </h2>
+      <p class="text-lg text-gray-600 text-balance">
+        Có thêm câu hỏi? Kết nối với chúng tôi tại support@sotro.vn
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {
+        faqs.map((faq, index) => (
+          <details>
+            <summary>
+              <span class="text-xl font-semibold cursor-pointer text-gray-800 hover:text-sky-800">
+                {faq.question}
+              </span>
+            </summary>
+            <div class="p-4 border border-orange-300 bg-orange-50 mt-2 rounded-md">
+              💡 {faq.answer}
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
