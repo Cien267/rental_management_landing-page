@@ -1,0 +1,79 @@
+---
+const testimonials = [
+  {
+    name: "Anh Nguyễn Khắc Hưng",
+    title: "Quản lý 14 nhà trọ cho thuê",
+    location: "TP.HCM",
+    quote:
+      "Sổ trọ đã giúp anh tiết kiệm 10 giờ mỗi tuần trong việc quản lý thông tin người thuê. Giờ anh có thể tập trung mở thêm cơ sở mới.",
+    rating: 5,
+    avatarUrl: "/src/assets/avatar-hung.jpg",
+  },
+  {
+    name: "Anh Nguyễn Đức Thái",
+    title: "Chủ nhà trọ",
+    location: "Hà Nội",
+    quote:
+      "Cuối cùng cũng có một hệ thống sắp xếp mọi thứ mình cần. Việc theo dõi thanh toán giờ đã dễ dàng hơn rất nhiều.",
+    rating: 5,
+    avatarUrl: "/src/assets/avatar-thai.jpg",
+  },
+  {
+    name: "Chị Nguyễn Vũ Đức",
+    title: "Chủ chuỗi Air BnB",
+    location: "Đà Nẵng",
+    quote:
+      "Người thuê của tôi đánh giá rất cao những hóa đơn chuyên nghiệp, mọi thứ rất minh bạch và rõ ràng.",
+    rating: 5,
+    avatarUrl: "/src/assets/avatar-duc.jpg",
+  },
+]
+---
+
+<section class="py-20 pb-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2
+        class="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance"
+      >
+        Rất nhiều chủ nhà đã tin tưởng
+      </h2>
+      <p class="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+        Tham gia cùng hàng trăm chủ nhà đã tối ưu hóa việc quản lý cho thuê
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {
+        testimonials.map((testimonial, index) => (
+          <div class="bg-card rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex gap-1 mb-4">
+              {[...Array(testimonial.rating)].map((_, i) => "⭐")}
+            </div>
+
+            <blockquote class="text-foreground mb-6 leading-relaxed">
+              "{testimonial.quote}"
+            </blockquote>
+
+            <div class="flex justify-start items-center gap-4">
+              <img
+                src={testimonial.avatarUrl}
+                alt="User Avatar"
+                class="w-16 h-16 rounded-full object-cover ring-4 ring-blue-500 ring-offset-4 ring-offset-slate-900 shadow-xl hover:scale-105 transition-transform duration-300"
+              />
+              <div>
+                <div class="font-bold text-foreground">{testimonial.name}</div>
+                <div class="text-sm font-semibold text-gray-600 mt-1">
+                  👔 {testimonial.title}
+                </div>
+                <div class="text-xs font-semibold text-gray-800 mt-1">
+                  📍 {testimonial.location}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
