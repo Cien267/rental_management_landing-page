@@ -1,5 +1,6 @@
 ---
-
+import showcase from "../../assets/screenshot.webp"
+import { Image } from "astro:assets"
 ---
 
 <section class="py-20 pb-40 bg-linear-to-b from-accent-light/20 to-background">
@@ -23,8 +24,8 @@
         <div
           class="relative rounded-2xl overflow-hidden shadow-[0_12px_24px_rgba(0,111,200,0.3)] border p-4 border-gray-200"
         >
-          <img
-            src="/src/assets/screenshot.webp"
+          <Image
+            src={showcase}
             alt="So Tro dashboard showing tenant management, payment tracking, and room occupancy"
             class="w-full h-auto"
           />

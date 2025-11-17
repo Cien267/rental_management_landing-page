@@ -1,4 +1,9 @@
 ---
+import avtHung from "../../assets/avatar-hung.jpg"
+import avtThai from "../../assets/avatar-thai.jpg"
+import avtDuc from "../../assets/avatar-duc.jpg"
+import { Image } from "astro:assets"
+
 const testimonials = [
   {
     name: "Anh Nguyễn Khắc Hưng",
@@ -7,7 +12,7 @@ const testimonials = [
     quote:
       "Sổ trọ đã giúp anh tiết kiệm 10 giờ mỗi tuần trong việc quản lý thông tin người thuê. Giờ anh có thể tập trung mở thêm cơ sở mới.",
     rating: 5,
-    avatarUrl: "/src/assets/avatar-hung.jpg",
+    avatar: avtHung,
   },
   {
     name: "Anh Nguyễn Đức Thái",
@@ -16,7 +21,7 @@ const testimonials = [
     quote:
       "Cuối cùng cũng có một hệ thống sắp xếp mọi thứ mình cần. Việc theo dõi thanh toán giờ đã dễ dàng hơn rất nhiều.",
     rating: 5,
-    avatarUrl: "/src/assets/avatar-thai.jpg",
+    avatar: avtThai,
   },
   {
     name: "Chị Nguyễn Vũ Đức",
@@ -25,7 +30,7 @@ const testimonials = [
     quote:
       "Người thuê của tôi đánh giá rất cao những hóa đơn chuyên nghiệp, mọi thứ rất minh bạch và rõ ràng.",
     rating: 5,
-    avatarUrl: "/src/assets/avatar-duc.jpg",
+    avatar: avtDuc,
   },
 ]
 ---
@@ -56,8 +61,8 @@ const testimonials = [
             </blockquote>
 
             <div class="flex justify-start items-center gap-4">
-              <img
-                src={testimonial.avatarUrl}
+              <Image
+                src={testimonial.avatar}
                 alt="User Avatar"
                 class="w-16 h-16 rounded-full object-cover ring-4 ring-blue-500 ring-offset-4 ring-offset-slate-900 shadow-xl hover:scale-105 transition-transform duration-300"
               />
