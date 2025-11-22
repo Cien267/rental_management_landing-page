@@ -10,7 +10,7 @@ import { Image } from "astro:assets"
   </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-    <div class="grid md:grid-cols-5">
+    <div class="grid grid-cols-1 md:grid-cols-5">
       <div class="space-y-6 col-span-3">
         <div>
           <h1
@@ -19,7 +19,9 @@ import { Image } from "astro:assets"
             Quản lý nhà trọ của bạn một cách đơn giản và thông minh
           </h1>
         </div>
-        <p class="text-xl text-muted-foreground leading-relaxed">
+        <p
+          class="text-xl text-muted-foreground leading-relaxed hidden md:block"
+        >
           Sổ Trọ là phần mềm quản lý dành riêng cho chủ nhà trọ/chủ căn hộ cho
           thuê tại Việt Nam. Quản lý khách thuê, hợp đồng, hóa đơn và thu tiền
           chuyên nghiệp, tất cả gói gọn trong một nền tảng. <br />

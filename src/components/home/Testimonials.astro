@@ -13,6 +13,7 @@ const testimonials = [
       "Sổ trọ đã giúp anh tiết kiệm 10 giờ mỗi tuần trong việc quản lý thông tin người thuê. Giờ anh có thể tập trung mở thêm cơ sở mới.",
     rating: 5,
     avatar: avtHung,
+    aosAnimation: "zoom-in",
   },
   {
     name: "Anh Nguyễn Đức Thái",
@@ -22,6 +23,7 @@ const testimonials = [
       "Cuối cùng cũng có một hệ thống sắp xếp mọi thứ mình cần. Việc theo dõi thanh toán giờ đã dễ dàng hơn rất nhiều.",
     rating: 5,
     avatar: avtThai,
+    aosAnimation: "zoom-in",
   },
   {
     name: "Chị Nguyễn Vũ Đức",
@@ -31,11 +33,12 @@ const testimonials = [
       "Người thuê của tôi đánh giá rất cao những hóa đơn chuyên nghiệp, mọi thứ rất minh bạch và rõ ràng.",
     rating: 5,
     avatar: avtDuc,
+    aosAnimation: "zoom-in",
   },
 ]
 ---
 
-<section class="py-20 pb-40">
+<section class="py-20 md:pb-40">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-12">
       <h2
@@ -51,7 +54,10 @@ const testimonials = [
     <div class="grid md:grid-cols-3 gap-8">
       {
         testimonials.map((testimonial, index) => (
-          <div class="bg-card rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+          <div
+            class="bg-card rounded-xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+            data-aos={testimonial.aosAnimation || "fade-up"}
+          >
             <div class="flex gap-1 mb-4">
               {[...Array(testimonial.rating)].map((_, i) => "⭐")}
             </div>

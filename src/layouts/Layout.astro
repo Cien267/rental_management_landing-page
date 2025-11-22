@@ -1,3 +1,7 @@
+---
+import "aos/dist/aos.css"
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,6 +54,14 @@
   </head>
   <body class="font-sans">
     <slot />
+    <script>
+      import AOS from "aos"
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+      })
+    </script>
   </body>
 </html>
 

@@ -14,6 +14,7 @@ const plans = [
     ],
     cta: "Bắt đầu miễn phí",
     popular: false,
+    aosAnimation: "slide-right",
   },
   {
     name: "Chuyên Nghiệp",
@@ -31,6 +32,7 @@ const plans = [
     ],
     cta: "Dùng thử 14 ngày",
     popular: true,
+    aosAnimation: "slide-up",
   },
   {
     name: "Doanh Nghiệp",
@@ -48,11 +50,12 @@ const plans = [
     ],
     cta: "Liên hệ ngay",
     popular: false,
+    aosAnimation: "slide-left",
   },
 ]
 ---
 
-<section id="pricing" class="py-20 pb-40 bg-muted/30">
+<section id="pricing" class="py-20 md:pb-40 bg-muted/30">
   <div class="container mx-auto px-4">
     <div class="text-center max-w-3xl mx-auto mb-16 animate-slide-up">
       <h2 class="text-4xl md:text-5xl font-bold mb-6 text-foreground">
@@ -70,6 +73,7 @@ const plans = [
           <div
             class={`relative p-8 rounded-2xl border-2 bg-card transition-all duration-300 shadow-xl hover:shadow-[0_12px_24px_rgba(0,111,200,0.3)] animate-slide-up border-gray-300 hover:border-sky-500 hover:cursor-pointer hover:scale-105`}
             style={{ animationDelay: `${index * 0.1}s` }}
+            data-aos={plan.aosAnimation || "fade-up"}
           >
             {plan.popular && (
               <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-sky-500 text-white text-sm font-semibold rounded-full">
